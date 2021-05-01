@@ -1,0 +1,53 @@
+<div class="conteudo">
+  <div class="item apresentacao">
+    <h1>Sistema de busca de Cep</h1>
+    <h3>Busque abaixo o cep desejado</h3>
+    <input #buscaCep type="text" />
+    <button
+      class="btn btn-outline-success ml-2"
+      (click)="busca(buscaCep.value, template)"
+    >
+      Buscar
+    </button>
+    <!-- <app-modal [cep]="cep"> </app-modal> -->
+  </div>
+  <div class="item resultados">
+    <h3>Itens ja buscados</h3>
+    <ul *ngFor="let cep of listaCeps">
+      <li class="cep">{{ cep.cep }}</li>
+      <li class="endereco">{{ cep.logradouro }}</li>
+      <li class="botao">
+        <button class="btn btn-outline-danger btn-sm">Re-ver</button>
+      </li>
+    </ul>
+  </div>
+</div>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="cep.cep; then pesquisa; else erro"></div>
+
+    <ng-template #pesquisa>
+      <h4>{{ cep.cep }}</h4>
+      <h4>{{ cep.logradouro }}</h4>
+      <h4>{{ cep.complemento }}</h4>
+      <h4>{{ cep.bairro }}</h4>
+      <h4>{{ cep.localidade }}</h4>
+      <h4>{{ cep.uf }}</h4>
+      <h4>{{ cep.ddd }}</h4>
+    </ng-template>
+    <ng-template #erro>
+      <h4>Cep: {{ buscaCep.value }} nao encontrado</h4>
+    </ng-template>
+  </div>
+</ng-template>
