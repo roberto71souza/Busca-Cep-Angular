@@ -1,9 +1,10 @@
-<button type="button" class="btn btn-primary" (click)="openModal(template)">
-  Create template modal
+<button type="button" class="btnRever btn btn-sm" (click)="openModal(template)">
+  re-ver
 </button>
 
 <ng-template #template>
   <div class="modal-header">
+    <h3 class="modal-title">Item buscado</h3>
     <button
       type="button"
       class="close pull-right"
@@ -14,12 +15,12 @@
     </button>
   </div>
   <div class="modal-body">
-    <h4>{{ cep.cep }}</h4>
-    <h4>{{ cep.logradouro }}</h4>
-    <h4>{{ cep.complemento }}</h4>
-    <h4>{{ cep.bairro }}</h4>
-    <h4>{{ cep.localidade }}</h4>
-    <h4>{{ cep.uf }}</h4>
-    <h4>{{ cep.ddd }}</h4>
+    <p><b>Cep:</b> {{ cep.cep }}</p>
+    <p><b>Logradouro:</b> {{ cep.logradouro }}</p>
+    <p><b>Complemento:</b> {{ cep.complemento }}</p>
+    <p><b>Bairro:</b> {{ cep.bairro }}</p>
+    <p><b>Localidade:</b> {{ cep.localidade }}</p>
+    <p><b>Uf:</b> {{ cep.uf }}</p>
+    <p><b>Ddd:</b> {{ cep.ddd }}</p>
   </div>
 </ng-template>

@@ -25,6 +25,15 @@ export class AppComponent implements OnInit {
       (response) => ((this.cep = response), this.listaCeps.push(response)),
       (error) => console.error(error)
     );
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template,{class:'modalcustom modal-sm'});
+  }
+
+  remover(cep: string): void {
+    for (let i = 0; i < this.listaCeps.length; i++) {
+      if (this.listaCeps[i].cep === cep) {
+        this.listaCeps.splice(i, 1);
+      }
+    }
+    console.log(this.listaCeps);
   }
 }

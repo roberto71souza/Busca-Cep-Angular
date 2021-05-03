@@ -1,8 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
 * {
   margin: 0px;
   padding: 0px;
   border: 0px;
   box-sizing: border-box;
+}
+
+.modalcustom .modal-content {
+  background-color: rgb(83, 0, 90);
+  color: white;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.modalcustom .modal-header {
+  border: none;
+}
+
+.modalcustom .modal-body {
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+
+
+.modalcustom .close {
+  color: white;
 }
