@@ -4,16 +4,10 @@ hr {
   margin: 15px auto;
 }
 
-/**/
-.remover {
-  cursor: pointer;
-}
-
-/**/
-
 .conteudo {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 300px minmax(250px,auto);
   background-color: black;
   min-height: 100vh;
   height: 100%;
@@ -84,12 +78,26 @@ h4 {
   flex-grow: 1;
 }
 
-.resultados>ul>.endereco {
+.endereco {
   order: 1;
 }
 
-.resultados>ul>.botao {
+.remover {
+  cursor: pointer;
+}
+
+.botao {
   order: 0;
+}
+
+.btnDetalhes {
+  border: 1px solid rgb(83, 0, 90);
+  color: white;
+}
+
+.btnDetalhes:hover {
+  background-color: rgb(83, 0, 90);
+  color: white;
 }
 
 @media (min-width: 860px) {

@@ -1,11 +1,23 @@
-.btnRever {
-  border: 1px solid rgb(83, 0, 90);
-  color: white;
-}
-
-.btnRever:hover {
+.modal-content {
   background-color: rgb(83, 0, 90);
   color: white;
+  padding: 15px;
+  border-radius: 50px;
 }
 
+.modal-header {
+  border: none;
+}
 
+.modal-body {
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+.close {
+  color: white;
+}
+
+.close:hover {
+  color: white;
+}

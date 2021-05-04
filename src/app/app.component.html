@@ -6,10 +6,11 @@
     <input #buscaCep type="text" placeholder="Cep:" />
     <button
       class="btn btn-outline-success ml-2"
-      (click)="busca(buscaCep.value, template)"
+      (click)="busca(buscaCep.value); modal.showModal()"
     >
       Buscar
     </button>
+    <app-modal #modal [cep]="cep"> </app-modal>
   </div>
   <div class="item resultados">
     <div class="resultados-apresentacao">
@@ -25,37 +26,11 @@
       <li class="cep">{{ cep.cep }}</li>
       <li class="endereco">{{ cep.logradouro }}</li>
       <li class="botao">
-        <app-modal [cep]="cep"> </app-modal>
+        <button class="ml-1 btnDetalhes btn btn-sm" (click)="detalhes.showModal()">
+          detalhes
+        </button>
+        <app-modal #detalhes [cep]="cep"> </app-modal>
       </li>
     </ul>
   </div>
 </div>
-<ng-template #template>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Busca</h4>
-    <button
-      type="button"
-      class="close pull-right"
-      aria-label="Close"
-      (click)="modalRef.hide()"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div *ngIf="cep.cep; then pesquisa; else erro"></div>
-
-    <ng-template #pesquisa>
-      <p><b>Cep:</b> {{ cep.cep }}</p>
-      <p><b>Logradouro:</b> {{ cep.logradouro }}</p>
-      <p><b>Complemento:</b> {{ cep.complemento }}</p>
-      <p><b>Bairro:</b> {{ cep.bairro }}</p>
-      <p><b>Localidade:</b> {{ cep.localidade }}</p>
-      <p><b>Uf:</b> {{ cep.uf }}</p>
-      <p><b>Ddd:</b> {{ cep.ddd }}</p>
-    </ng-template>
-    <ng-template #erro>
-      <h5>Cep nao encontrado</h5>
-    </ng-template>
-  </div>
-</ng-template>
