@@ -26,7 +26,10 @@
       <li class="cep">{{ cep.cep }}</li>
       <li class="endereco">{{ cep.logradouro }}</li>
       <li class="botao">
-        <button class="ml-1 btnDetalhes btn btn-sm" (click)="detalhes.showModal()">
+        <button
+          class="ml-1 btnDetalhes btn btn-sm"
+          (click)="detalhes.showModal()"
+        >
           detalhes
         </button>
         <app-modal #detalhes [cep]="cep"> </app-modal>

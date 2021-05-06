@@ -9,7 +9,9 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 id="dialog-events-name" class="modal-title pull-left">Item Buscado</h4>
+        <h4 id="dialog-events-name" class="modal-title pull-left">
+          Item Buscado
+        </h4>
         <button
           type="button"
           class="close pull-right"
@@ -34,6 +36,14 @@
         <ng-template #erro>
           <p><b>cep nao encontrado</b></p>
         </ng-template>
+        <div class="modal-footer">
+          <button
+            class="visitar btn btn-md"
+            (click)="irAte(cep.cep); modal.hide()"
+          >
+            ir ate
+          </button>
+        </div>
       </div>
     </div>
   </div>

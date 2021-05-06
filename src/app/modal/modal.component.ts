@@ -9,12 +9,20 @@ import { Cep } from '../models/cep';
 })
 export class ModalComponent implements OnInit {
   @Input() cep!: Cep;
+  private baseGoogle = 'https://www.google.com/maps/dir/?api=1&origin=';
 
   @ViewChild(ModalDirective, { static: false }) modal!: ModalDirective;
-  constructor() {}
-  ngOnInit() {}
+  constructor() {
+    this.cep = {} as Cep;
+  }
+  ngOnInit(): void {}
 
-  showModal() {
+  showModal(): void {
     this.modal.show();
+  }
+
+  irAte(cep: string): void {
+    const url = `${this.baseGoogle}/${cep}`;
+    window.open(url, '_blank');
   }
 }
