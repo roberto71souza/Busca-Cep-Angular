@@ -36,7 +36,7 @@
         <ng-template #erro>
           <p><b>cep nao encontrado</b></p>
         </ng-template>
-        <div class="modal-footer">
+        <div *ngIf="cep.cep" class="modal-footer">
           <button
             class="visitar btn btn-md"
             (click)="irAte(cep.cep); modal.hide()"
