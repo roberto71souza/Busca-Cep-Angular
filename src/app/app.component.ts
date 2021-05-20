@@ -30,6 +30,5 @@ export class AppComponent implements OnInit {
         this.listaCeps.splice(i, 1);
       }
     }
-    console.log(this.listaCeps);
   }
 }
